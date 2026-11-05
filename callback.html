@@ -1,0 +1,20 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anmeldung · Weltrechner</title><link rel="stylesheet" href="style.css"><link rel="icon" href="logo.png"><meta name="robots" content="noindex,nofollow"></head>
+<body><main><header><img src="logo.png" alt="Weltrechner-Maskottchen Rechni"><a href="index.html">Weltrechner</a></header>
+<h1>Verbindung mit TikTok</h1>
+<div id="ok" class="box" hidden>
+<p><strong>Anmeldung erfolgreich.</strong> Kopiere diesen Code und schick ihn an Claude. Er ist nur wenige Minuten gültig und funktioniert nur einmal.</p>
+<p><span id="code" class="code"></span></p>
+<p><button id="copy">Code kopieren</button> <span id="done" class="muted" hidden>Kopiert ✓</span></p>
+</div>
+<div id="err" class="box" hidden><p><strong>Die Anmeldung hat nicht geklappt.</strong></p><p id="errmsg" class="muted"></p></div>
+<div id="none" class="box" hidden><p>Diese Seite empfängt den Anmelde-Code von TikTok. Hier gibt es sonst nichts zu sehen.</p></div>
+<script>
+(function(){var q=new URLSearchParams(location.search),c=q.get('code'),e=q.get('error');
+if(c){document.getElementById('ok').hidden=false;document.getElementById('code').textContent=c;
+document.getElementById('copy').onclick=function(){navigator.clipboard.writeText(c).then(function(){document.getElementById('done').hidden=false;});};
+history.replaceState(null,'',location.pathname);}
+else if(e){document.getElementById('err').hidden=false;document.getElementById('errmsg').textContent=e+': '+(q.get('error_description')||'');}
+else{document.getElementById('none').hidden=false;}})();
+</script>
+<nav class="foot"><a href="index.html">Start</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="nutzungsbedingungen.html">Nutzungsbedingungen</a><a href="privacy.html">Privacy (EN)</a><a href="terms.html">Terms (EN)</a></nav></main></body></html>
